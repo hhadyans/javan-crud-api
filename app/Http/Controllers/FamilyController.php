@@ -15,6 +15,12 @@ class FamilyController extends Controller
         return view('family.index', compact('family', 'no'));
     }
 
+    public function show()
+    {
+        $family = Family::whereNull('parent_id')->get();
+        return view('family.tree', compact('family'));
+    }
+
     public function create()
     {
         $parents = Family::getAllParent();

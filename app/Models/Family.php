@@ -24,7 +24,7 @@ class Family extends Model
 
     public function children()
     {
-        return $this->hasMany(Family::class, 'id', 'parent_id');
+        return $this->hasMany(Family::class, 'parent_id', 'id');
     }
 
     public static function getAllParent()

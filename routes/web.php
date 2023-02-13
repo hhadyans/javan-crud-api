@@ -17,6 +17,7 @@ use App\Http\Controllers\FamilyController;
 
 Route::resource('family', FamilyController::class);
 Route::get('family/delete/{id}', [FamilyController::class, 'destroy'])->name('family.delete');
+Route::get('family/treeView', [FamilyController::class, 'familyTree'])->name('family.treeView');
 Route::post('family/update/{id}', [FamilyController::class, 'update'])->name('family.update');
 
 Route::get('/', function () {

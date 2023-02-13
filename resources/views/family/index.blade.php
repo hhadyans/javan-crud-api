@@ -8,6 +8,7 @@
 </head>
 <body>
     <a href="{{ route('family.create') }}">Create New Data</a>
+    <a href="{{ route('family.treeView') }}">View Tree Data</a>
     <table>
         <tr>
             <th>No.</th>
