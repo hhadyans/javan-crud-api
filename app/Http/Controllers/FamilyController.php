@@ -31,7 +31,7 @@ class FamilyController extends Controller
     {
         $data = Family::find($id);
         $parents = Family::getAllParent();
-        return view('family.form', compact('data', 'parents'));
+        return view('family.edit', compact('data', 'parents'));
     }
 
     public function store(Request $request)

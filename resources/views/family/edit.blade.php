@@ -7,18 +7,18 @@
     <title>Create</title>
 </head>
 <body>
-    <form action="{{ route('family.store') }}" method="post">
+    <form action="{{ route('family.update', $data->id) }}" method="post">
         {{ csrf_field() }}
         <table>
             <tr>
                 <td>Nama</td>
-                <td><input type="text" name="nama" id=""></td>
+                <td><input type="text" name="nama" value="{{ $data->nama }}" id=""></td>
             </tr>
             <tr>
                 <td>Jenis Kelamin</td>
                 <td>
-                    <input type="radio" value="1" name="jenis_kelamin" id=""> Laki-laki
-                    <input type="radio" value="2" name="jenis_kelamin" id=""> Perempuan
+                    <input type="radio" value="1" name="jenis_kelamin" id="" {{ ($data->jenis_kelamin == 1) ? 'checked' : '' }}> Laki-laki
+                    <input type="radio" value="2" name="jenis_kelamin" id="" {{ ($data->jenis_kelamin == 2) ? 'checked' : '' }}> Perempuan
                 </td>
             </tr>
             <tr>
@@ -27,7 +27,7 @@
                     <select name="parent_id" id="">
                         <option value="">Opsi Orang Tua</option>
                         @foreach ($parents as $parent)
-                            <option value="{{ $parent->id }}">{{ $parent->nama }}</option>
+                            <option value="{{ $parent->id }}" {{ ($data->parent_id == $parent->id) ? 'selected' : '' }}>{{ $parent->nama }}</option>
                         @endforeach
                     </select>
                 </td>
