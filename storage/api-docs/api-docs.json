@@ -1,0 +1,161 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Javan Test API Documentation",
+        "version": "0.1"
+    },
+    "paths": {
+        "/api/family": {
+            "get": {
+                "tags": [
+                    "Family"
+                ],
+                "summary": "Get All Family Member",
+                "description": "Get all family member",
+                "operationId": "c2519f69d11077cdc2db977e465048e0",
+                "responses": {
+                    "200": {
+                        "description": "success"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Family"
+                ],
+                "summary": "Create New Family Member",
+                "description": "Store family member data",
+                "operationId": "0154710af51f22939297ac0973785fe4",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "nama": {
+                                        "type": "string"
+                                    },
+                                    "jenis_kelamin": {
+                                        "type": "integer",
+                                        "enum": [
+                                            "1",
+                                            "2"
+                                        ]
+                                    },
+                                    "parent_id": {
+                                        "type": "integer"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "success"
+                    }
+                }
+            }
+        },
+        "/api/family/{id}": {
+            "get": {
+                "tags": [
+                    "Family"
+                ],
+                "summary": "Show Family Member Detail",
+                "description": "Get family Member detail",
+                "operationId": "9e6e2421035df36c5ab6befd64a9d945",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Family Member ID",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "success"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Family"
+                ],
+                "summary": "Update Family Member",
+                "description": "Update family member data",
+                "operationId": "bc14ebae9d9d8578d4ab0ab2ab27db49",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Family Member ID",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "nama": {
+                                        "type": "string"
+                                    },
+                                    "jenis_kelamin": {
+                                        "type": "integer",
+                                        "enum": [
+                                            "1",
+                                            "2"
+                                        ]
+                                    },
+                                    "parent_id": {
+                                        "type": "integer"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "success"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Family"
+                ],
+                "summary": "Delete Family Member",
+                "description": "Delete family member",
+                "operationId": "c299c3366d697010680fe5d37aeb8644",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Transaction ID",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "success"
+                    }
+                }
+            }
+        }
+    }
+}
